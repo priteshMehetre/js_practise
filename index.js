@@ -1,20 +1,7 @@
-// let x = {
-//   firstName: "Ram",
-//   lastName: "Suryavanshi",
-// };
-function getFullName(age) {
-  console.log(this.firstName + " " + this.lastName + " " + age);
-  return this.firstName + " " + this.lastName + " " + age;
-}
-// console.log(x.getFullName());
-
-let y = {
-  firstName: "Sita",
-  lastName: "Raman",
+new Date(); //the JavaScript Date() method
+//overriding the JavaScript Date() method
+function Date(){
+this.date = "This method overrides the default constructor of Date class.";
 };
-// it borrows a function
-getFullName.call(y, 31);
-getFullName.apply(y, [32]);
-
-let bindData = getFullName.bind(y, 33);
-bindData();
+var date2 = new Date();
+console.log(date2);
