@@ -5,11 +5,20 @@ const promise2 = new Promise((resolve, reject) => setTimeout(()=> resolve('Promi
 const promise3 = new Promise((resolve, reject) => setTimeout(()=> resolve('Promise3')), 3000);
 
 /**
- * executes all the promises in parallel and return result
+ * Settle all promises and return result  
  */
-Promise.all([promise1, promise2, promise3])
+Promise.allSettled([promise1, promise2, promise3])
 .then((res) => {
 console.log('In then', res);
 }).catch((err) => {
 console.log('In catch', err);
 })
+
+/**
+ * Output:
+ * [
+  { status: 'rejected', reason: 'Promise1' },
+  { status: 'fulfilled', value: 'Promise2' },
+  { status: 'fulfilled', value: 'Promise3' }
+]
+ */
